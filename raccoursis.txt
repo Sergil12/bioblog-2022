@@ -1,0 +1,14 @@
+
+
+
+<?php 
+if (isset($title)){
+    echo $title;             = <?= isset($title) ? $title : ''?>
+}else {
+    echo '';
+}
+?>
+
+
+
+
