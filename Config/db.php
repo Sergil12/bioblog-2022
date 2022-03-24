@@ -2,7 +2,7 @@
 
 $db_host = "localhost"; //nom de domaine, hote de la base de donener
 $db_name ="bioblog" ; // creee le noms de la base de donner
-$db_username ="bioblog"; // user name de la base de donner
+$db_username ="bioblog"; // user name de la base de donner meme mdp que celuis mit dans utilisateur
 $db_password ="bioblog";// mot de pass db
 
 
