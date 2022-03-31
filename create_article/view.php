@@ -18,7 +18,8 @@
                            type ="Text"
                            name="title" 
                            placeholder="Title" 
-                           required maxlength="50"/> <!-- placeholder="Titre" = ce qui fait mit avant que on tape  --></input>
+                           maxlength="50"
+                           value="<?= isset($article) ? $_POST['title'] : '' ?>"/> <!-- placeholder="Titre" = ce qui fait mit avant que on tape et la ligne value c'est pour que les donner reste meme si on remplis pas tout  --></input> 
                 </label>
                 <?php if (isset($validations)&& isset($validations['title'])): ?>  <!-- c'est le message d'erreure si il y a une erreur et que title est dans le tableau d'erreur-->
                     <p><?= $validations['title']?></p> <!-- c'est le message d'erreure-->
@@ -30,7 +31,7 @@
                     <textarea
                         class="form-control"
                         name="content"
-                        required maxlength="1000"></textarea>
+                        maxlength="1000"><?= isset($article) ? $_POST['content'] : '' ?></textarea>
                 </label>
                 <?php if (isset($validations)&& isset($validations['content'])): ?>  <!-- c'est le message d'erreure si il y a une erreur et que content est dans le tableau d'erreur-->
                     <p><?= $validations['content']?></p> <!-- on affiche ca c'est le message d'erreure-->
