@@ -1,4 +1,6 @@
 <!-- Partie html se qui se voit     la view n'a pas acces au model et a l'index -->
+<?php require_once "../helpers/form-helper.php"; ?> <!-- pour recupere ce que il y a dans helpers -->
+
 <!DOCTYPE html>
 <html lang="fr">
 <?php $title = "Acceuil" ; require "../head.php" ?> <!-- Require = mettre tout ce que il y a dans le head ici  et le $title c est pour que on sache quoi afficher -->
@@ -24,6 +26,14 @@
          </div>
          <!--<?= $article["title"] ?>  on affiche les titre sans style--> 
        <?php endforeach;?>
+    </div>
+    <div>
+      <?php if($page > 1):?> <!-- pour pas que ca beug si on revient en arriere a la page 0-->
+        <a href ="<?=getSelfUrl()?>?page=<?= $page-1?>"class="float-left btn btn-success">Précedent</a> 
+        <?php endif; ?>
+        <?php if(count($articles_list)=== ROW_PER_PAGE) : ?>
+        <a href ="<?=getSelfUrl()?>?page=<?= $page+1?>"class="float-right btn btn-success">Suivant</a>
+        <?php endif; ?>
     </div>
    </div>
 
