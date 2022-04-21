@@ -22,9 +22,18 @@ if ($_SERVER['REQUEST_METHOD']==='POST') { //verifier si c'st un post = if(isset
     $article = [
         'title' => sanitize_input($_POST['title']), //sanitize_input pour les truc froduleux
         'content' => sanitize_input ($_POST['content']), //on recupere ce que il y a dans titre et contenu et on les met dans un tableau
-    ];
+    ];//on rajoute la logique pour recuperer l'image dans l'input et la rajouter dans la db en dessous 
 
+    
     if(sizeof($validations)=== 0){ //si le tableau est vide c'est bon 
+        if (isset($_FILES['image']['name'])) { //si il y a quelque chose dans FILES qui s'appelle image
+            $_target_dir = '../uploads/'; //quelle est le dossier vers lequel on veux sauver les images
+            $target_file = $_target_dir . $_FILES['image']['name']; //chemin complet vers ou on veux sauver l'image 
+            move_uploaded_file($_FILES['image']['tmp_name'], $target_file);   //quel fichier on veux et ou on veux que il soit
+            $article['image'] = $target_file;//on peut l'ajouter dans articles si il y a une image 
+         }
+         //die(); //on s'arrete la on teste avant de mettre dans la db
+     
         try{ //PROTECTION
             insertArticle($article); // si c'et ok ca va me l'ajouter a la db 
             redirect('../articles');

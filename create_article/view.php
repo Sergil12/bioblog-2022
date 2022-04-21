@@ -37,6 +37,20 @@
                     <p><?= $validations['content']?></p> <!-- on affiche ca c'est le message d'erreure-->
                 <?php endif;?>
             </div>
+
+            <div class="form-group">
+                <label>
+                    Image
+                    <input
+                          class="form-control"  
+                          type="file"
+                          name="image"  
+                          accept="image/*"  
+                          /> <!-- grace a se formulaire on peu aller chercher une image et grace au name on le retrouve dans le $post-->
+                </label>
+            </div>
+
+
             <button type="submit" value="Envoyer" class="btn btn-primary">Envoyer</button>
 
 

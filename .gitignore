@@ -1,0 +1,4 @@
+#tu ignore tout ce qui dans upload donc les image sauve keep 
+
+/uploads/* 
+!/uploads/.keep 

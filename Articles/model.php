@@ -5,7 +5,7 @@ require_once "../config/db.php";// require_once ca affiche que une fois la conne
 
 function getArticles() { //recupere ert afficher les articles
       global $db_default_connection ;// on met global car elle a pas ete initier ici
-      $query ="SELECT id, title, content, creation_date FROM articles"; //On met la requete sql 
+      $query ="SELECT id, title, content, creation_date, image FROM articles"; //On met la requete sql et on ajoute image
       $stmt = $db_default_connection ->prepare ($query);//prepare cette requete la a etre executer 
       $stmt->execute();// On execute la requete
       return $stmt; //$stmt c'est le resultat de la requete
@@ -24,7 +24,8 @@ function getMappedArticles(){  // transformer un type d'objet a un autre d'un st
                   "id"=> +$article["id"], // obliger de mettre le + car dans la db il est en auto increment
                   "title"=> $article["title"],   // AVEC MAPPED on tranforme le resultat de la abse de donner en code 
                   "content"=> $article["content"],
-                  "creationDate"=> date_create($article["creation_date"])
+                  "creationDate"=> date_create($article["creation_date"]),
+                  "image" => $article["image"] //on ajoute image 
            ];
 
            array_push($articles_list,$mapped_article);//tu met une valeur dans un tableau:list tu met les mapped article dans $articles
