@@ -21,7 +21,7 @@ if ($_SERVER['REQUEST_METHOD']==='POST') { //verifier si c'st un post = if(isset
 
     $article = [
         'title' => sanitize_input($_POST['title']), //sanitize_input pour les truc froduleux
-        'content' => sanitize_input ($_POST['content']), //on recupere ce que il y a dans titre et contenu et on les met dans un tableau
+        'content' => ($_POST['content']), //on recupere ce que il y a dans titre et contenu et on les met dans un tableau
     ];//on rajoute la logique pour recuperer l'image dans l'input et la rajouter dans la db en dessous 
 
     

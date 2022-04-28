@@ -1,9 +1,10 @@
 <!-- Partie html se qui se voit     la view n'a pas acces au model et a l'index -->
+<?php include "../vendors/autoload.php";?> <!-- permet de charger la librairie ou les qui a -->
 <?php require_once "../helpers/form-helper.php"; ?> <!-- pour recupere ce que il y a dans helpers -->
 
 <!DOCTYPE html>
 <html lang="fr">
-<?php $title = "Acceuil" ; require "../head.php" ?> <!-- Require = mettre tout ce que il y a dans le head ici  et le $title c est pour que on sache quoi afficher -->
+<?php $title = "Articles" ; require "../head.php" ?> <!-- Require = mettre tout ce que il y a dans le head ici  et le $title c est pour que on sache quoi afficher -->
 <body>
    <?php require "../header.php"; ?><!-- on ajoute ce que il y a dans le footer et le header on met ../ car on remonte d'un dossier -->
 
@@ -20,7 +21,15 @@
               <div class="card-body">
                 <h5 class="card-title"><?= $article["title"]?></h5> <!-- le titre de l'artcile sera le titre de la carte avec style -->
                 <time class="card-subtitle"><?= date_format ($article["creationDate"],"d/m/Y")?></time> 
-                <p class="card-text"><?= $article["content"]?></p> 
+                <?php
+                  try {  //pour blinder 
+                    $quill = new \DBlackborough\Quill\Render($article["content"]); // rendre le texte dans le content qui est avec des ))§(()) en vrais mot html
+                    $content = $quill->render();
+                 }catch(Exception $e){ //si il arrive pas en cas d'erreure
+                    $content = $article["content"];
+                 }
+                ?>
+                <p class="card-text"><?= $content?></p> 
               </div>
            </article>
          </div>
