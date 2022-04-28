@@ -4,7 +4,7 @@
 
 <!DOCTYPE html>
 <html lang="fr">
-<?php $title = "Articles" ; require "../head.php" ?> <!-- Require = mettre tout ce que il y a dans le head ici  et le $title c est pour que on sache quoi afficher -->
+<?php $title = "Articles" ; $site_description = "Vous pouvez trouver ici la liste de tout nos articles"; require "../head.php" ?> <!-- Require = mettre tout ce que il y a dans le head ici  et le $title c est pour que on sache quoi afficher -->
 <body>
    <?php require "../header.php"; ?><!-- on ajoute ce que il y a dans le footer et le header on met ../ car on remonte d'un dossier -->
 

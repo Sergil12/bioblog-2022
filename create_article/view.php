@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="fr">
-<?php $title = "Creations articles" ; require "../head.php" ?> <!-- Require = mettre tout ce que il y a dans le head ici  et le $title c est pour que on sache quoi afficher -->
+<?php $title = "Creations articles" ;  $site_description = "Vous pouvez crée ici votre propre articles BIO personaliser"; require "../head.php" ?> <!-- Require = mettre tout ce que il y a dans le head ici  et le $title c est pour que on sache quoi afficher -->
 <body>
    <style>
        .ql-container.ql-snow.-error {
