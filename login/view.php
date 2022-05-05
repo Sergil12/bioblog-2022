@@ -1,7 +1,12 @@
 <!DOCTYPE html>
 <html lang="fr">
-<?php $title = "Connexion" ; require "../head.php" ?> <!-- Require = mettre tout ce que il y a dans le head ici  et le $title c est pour que on sache quoi afficher -->
+<?php $title = "Connexion" ; $site_description = "Vous pouvez vous connecter"; require "../head.php" ?> <!-- Require = mettre tout ce que il y a dans le head ici  et le $title c est pour que on sache quoi afficher -->
 <body>
+   <style>
+       .error {
+           text-align: center;
+       }
+   </style>
    <?php require "../header.php"; ?> <!-- on ajoute ce que il y a dans le footer et le header-->
 
     <div class="container" >
@@ -36,7 +41,9 @@
           </form>
        </div>
     </div>
-
+   <?php if($_SERVER['REQUEST_METHOD']==='POST'): ?> <!--05/05 ex 4-->
+         <p class="error" ><?= "     Veuiller entrer un utilisateur ou un mot de pass correct!" ?></p> <!-- c'est le message d'erreure-->
+   <?php endif;?>
    <?php require "../footer.php"; ?>
 </body>
 </html>
