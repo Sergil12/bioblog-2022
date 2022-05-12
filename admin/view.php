@@ -14,6 +14,8 @@
    <br>
    <h2> Tu es Connecter !!!!  <?= $_SESSION["login"] ?></h2>
 
+   <div class="a"><a  href="../create_article">Crée un article</a></div> <!--lien vers ajouter un articles-->
+   
    <br>
    <form class="deco" action = "" method="POST"> <!--Bouton deconnexion-->
       <input type="submit" name="deconnexion" value="Logout" class="btn btn-danger"/>

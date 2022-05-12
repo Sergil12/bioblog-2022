@@ -4,6 +4,9 @@ require "model.php";
 require "../helpers/form-helper.php"; // on require pour pouvoir utiliser la fonction sanitize_input en dessous vu que on a deplacer la fonction dans helpers 
 require "../helpers/auth-helper.php";
 
+init_session(); //pour que la page nous reirige vers la connexion si on est pas connecter pour pouvoir cree un artciles que si on est connecter
+prevent_not_connected(false) ;
+
 Function validateInputs($inputs) { // valide les inputs
     $errors =[]; // ca contindras les erreurs dans un tableau 
     if (empty(trim($inputs['title']))) {//verifier si c'est vide  

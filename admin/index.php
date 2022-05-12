@@ -2,9 +2,8 @@
 
 require_once '../helpers/auth-helper.php'; //Avoir acces au init_session
 
-prevent_not_connected(true); // si c'est true on initialise le start_session iln'est plus false et on a acces a $_SESSION 
+init_session(); // si c'est true on initialise le start_session iln'est plus false et on a acces a $_SESSION 
 
-require './model.php';
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') { //du bouton deconnexion 
     if (isset($_POST['deconnexion'])) { //si on clique sur le bouton deconnexion 
@@ -15,4 +14,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') { //du bouton deconnexion
 
 prevent_not_connected(false) ;//ca redirige vers la page login
 
+require './model.php';
+
 require './view.php'; //liens
+
+?>
