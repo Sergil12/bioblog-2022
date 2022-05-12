@@ -9,6 +9,7 @@
 <!-- on va mettre pour Rendre le site social network frendly faire une carte pour remplacer url sur les resseaux  -->
     <title><?= $appName ?><?= isset($title) ? " - $title" : '' ?></title>  <!-- voir racoursit /on teste pour afficher le titre si il y a quelque chose dzns title si il y a rien on met rien  -->
     <meta name="decription" content="<?= $site_description ?>"/>
+    <link rel="stylesheet" href= "/bioblog/style.css"/>
 
 
 

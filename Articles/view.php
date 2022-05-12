@@ -1,6 +1,6 @@
 <!-- Partie html se qui se voit     la view n'a pas acces au model et a l'index -->
 <?php include "../vendors/autoload.php";?> <!-- permet de charger la librairie ou les qui a -->
-<?php require_once "../helpers/form-helper.php"; ?> <!-- pour recupere ce que il y a dans helpers -->
+ <!-- pour recupere ce que il y a dans helpers -->
 
 <!DOCTYPE html>
 <html lang="fr">
@@ -45,6 +45,30 @@
         <?php endif; ?>
     </div>
    </div>
+
+   <?php
+
+
+        function expose($nbr,$exp) {
+          $result = 0;
+          $result =$nbr; //resultat = 5 car en bas dans $result = expose on a dit que $number_to_expose (5) = $nbr
+
+          for($i = 0; $i < ($exp - 1); $i++ ){ //$i = 0 = on part de 0 et tant que $i est plus petit que $exp = l'exposant (2) tu boucle et on met -1 car au dessus il ya deja un exposant de calculer $i++ pour acrementer pour que il ajoute 1
+            $result = $result * $nbr; //on boucle se calcul $result= 5x5 ($result * $nbr)
+          }
+          return $result;
+
+        }
+
+        $number_to_expose = 5;
+        $exposant_to_apply =6;
+
+        $result = expose($number_to_expose,$exposant_to_apply);
+        echo $result;
+        echo '</br>';
+        echo expose (10,3); //on rajoute un autre calcule en plus (10³)
+
+  ?>
 
    <?php require "../footer.php"; ?>
 </body>
