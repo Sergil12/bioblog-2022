@@ -8,6 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <!-- on va mettre pour Rendre le site social network frendly faire une carte pour remplacer url sur les resseaux  -->
     <title><?= $appName ?><?= isset($title) ? " - $title" : '' ?></title>  <!-- voir racoursit /on teste pour afficher le titre si il y a quelque chose dzns title si il y a rien on met rien  -->
+    <link rel="icon" type="image/x-icon" href="/bioblog/favicon.ico">
     <meta name="decription" content="<?= $site_description ?>"/>
     <link rel="stylesheet" href= "/bioblog/style.css"/>
 
