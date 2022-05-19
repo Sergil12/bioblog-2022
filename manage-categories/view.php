@@ -21,11 +21,11 @@
                     <div class="col-3">
                         <input type="submit" 
                                value="sauver"
-                               name="name"
+                               name="save"
                                class="btn btn-primary"/>
                         <input type="submit" 
                                value="Supprimer"
-                               name="name"
+                               name="delete"
                                class="btn btn-danger"/>
                     </div> 
                 </div>
